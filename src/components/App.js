@@ -1,10 +1,11 @@
 import React from 'react';
+import GlobalStore from '../context/GlobalStore';
 
 const App = () => {
     return (
-        <div>
+        <GlobalStore>
             <p>working</p>
-        </div>
+        </GlobalStore>
     );
 };
 
