@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import GlobalStore from '../context/GlobalStore';
+import FormPanel from './FormPanel';
 import Header from './Header';
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
             <main className='content'>
                 <div className='content__container'>
                     <Header />
+                    <FormPanel />
                 </div>
             </main>
         </GlobalStore>

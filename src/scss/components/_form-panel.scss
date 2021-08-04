@@ -1,0 +1,22 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 10px;
+    background-color: var(--background-color-panel);
+    border-radius: 5px;
+
+    &__label {
+        display: flex;
+    }
+
+    &__input {
+        flex-grow: 1;
+        padding: 3px 2px;
+        font-family: $font-family-default;
+        color: var(--task-text-color);
+        background-color: transparent;
+        outline: none;
+        border-style: none;
+    }
+}
