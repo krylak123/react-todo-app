@@ -25,12 +25,15 @@ $breakpoints: (
 $font-family-default: 'Josefin Sans', sans-serif;
 $font-size-default: 18px;
 
+$color-primary-blue: hsl(220, 98%, 61%);
+
 :root[data-theme='dark'] {
     --background-color-main: hsl(235, 21%, 11%);
     --background-color-panel: hsl(235, 24%, 19%);
     --background-image-mobile: url('../../images/bg-mobile-dark.jpg');
     --background-image-desktop: url('../../images/bg-desktop-dark.jpg');
     --task-text-color: hsl(234, 39%, 85%);
+    --options-text-color: hsl(234, 11%, 52%);
 }
 
 :root[data-theme='light'] {
@@ -39,4 +42,5 @@ $font-size-default: 18px;
     --background-image-mobile: url('../../images/bg-mobile-light.jpg');
     --background-image-desktop: url('../../images/bg-desktop-light.jpg');
     --task-text-color: hsl(235, 19%, 35%);
+    --options-text-color: hsl(236, 9%, 61%);
 }

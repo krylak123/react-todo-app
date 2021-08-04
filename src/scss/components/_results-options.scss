@@ -1,0 +1,72 @@
+.results {
+    &__panel {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    &__options-wrap {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: calc(100% + 15px);
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color-panel);
+        border-radius: 5px;
+    }
+
+    &__count,
+    &__option,
+    &__clear {
+        color: var(--options-text-color);
+    }
+
+    &__clear,
+    &__option {
+        font-family: $font-family-default;
+        outline: none;
+        border-style: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__count,
+    &__clear {
+        margin: 10px 20px;
+        padding: 2px;
+        font-size: 0.7rem;
+    }
+
+    &__option {
+        margin: 13px 10px;
+        padding: 2px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        &:first-child,
+        &:last-child {
+            margin: 13px 0;
+        }
+
+        &.active {
+            color: $color-primary-blue;
+        }
+    }
+
+    @include mq(small) {
+        &__options-wrap {
+            position: static;
+            align-items: center;
+            width: auto;
+        }
+
+        &__option {
+            margin: 0px 10px;
+
+            &:first-child,
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+}
