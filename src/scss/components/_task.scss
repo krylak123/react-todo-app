@@ -1,6 +1,6 @@
 .task {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     padding: 10px;
     border-bottom: 1px solid #000;
 
@@ -19,17 +19,59 @@
         text-indent: 5px;
     }
 
-    &__actions-wrap {
+    &__finish-wrap,
+    &__delete-wrap {
         display: flex;
-        align-items: center;
         cursor: pointer;
     }
 
-    &__delete {
+    &__finish-wrap {
+        margin-right: 10px;
+    }
+
+    &__delete-wrap {
+        margin-left: auto;
+    }
+
+    &__btn-finish,
+    &__btn-delete {
+        padding: 5px;
         outline: none;
         border-style: none;
         background-color: transparent;
         cursor: pointer;
+        transition: 0.2s;
+    }
+
+    &__btn-finish {
+        padding: 6px 8px;
+        border-radius: 50%;
+        border: 1px solid var(--task-finish-text-color);
+    }
+
+    &__btn-delete {
+        transform: scale(1.1);
+    }
+
+    &__finish-icon {
+        transform: scale(1.3);
+        visibility: hidden;
+    }
+
+    &.finish {
+        & .task__name,
+        & .task__date {
+            color: var(--task-finish-text-color);
+            text-decoration: line-through;
+        }
+
+        & .task__btn-finish {
+            background: $color-primary-check-bg;
+        }
+
+        & .task__finish-icon {
+            visibility: visible;
+        }
     }
 
     @include mq(small) {

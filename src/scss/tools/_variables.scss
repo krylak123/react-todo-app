@@ -26,6 +26,11 @@ $font-family-default: 'Josefin Sans', sans-serif;
 $font-size-default: 18px;
 
 $color-primary-blue: hsl(220, 98%, 61%);
+$color-primary-check-bg: linear-gradient(
+    90deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+);
 
 :root[data-theme='dark'] {
     --background-color-main: hsl(235, 21%, 11%);
@@ -33,7 +38,9 @@ $color-primary-blue: hsl(220, 98%, 61%);
     --background-image-mobile: url('../../images/bg-mobile-dark.jpg');
     --background-image-desktop: url('../../images/bg-desktop-dark.jpg');
     --task-text-color: hsl(234, 39%, 85%);
+    --task-finish-text-color: hsl(233, 14%, 35%);
     --options-text-color: hsl(234, 11%, 52%);
+    --empty-text-color: hsl(120, 73%, 75%);
 }
 
 :root[data-theme='light'] {
@@ -42,5 +49,7 @@ $color-primary-blue: hsl(220, 98%, 61%);
     --background-image-mobile: url('../../images/bg-mobile-light.jpg');
     --background-image-desktop: url('../../images/bg-desktop-light.jpg');
     --task-text-color: hsl(235, 19%, 35%);
+    --task-finish-text-color: hsl(236, 33%, 92%);
     --options-text-color: hsl(236, 9%, 61%);
+    --empty-text-color: hsl(120, 100%, 20%);
 }

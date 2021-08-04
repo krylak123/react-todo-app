@@ -1,6 +1,7 @@
 export const appActions = {
     ADD_TASK: 'GET_TASKS',
     REMOVE_TASK: 'REMOVE_TASK',
+    FINISH_TASK: 'FINISH_TASK',
 };
 
 const handleAddTask = (state, payload) => {
@@ -15,6 +16,17 @@ const handleRemoveTask = (state, payload) => {
     return newState;
 };
 
+const handleFinishTask = (state, payload) => {
+    const newState = [...state];
+    newState.forEach((item) => {
+        if (item.id === payload.id) {
+            item.isFinished = !payload.isFinished;
+        }
+    });
+
+    return newState;
+};
+
 export const appReducer = (state, action) => {
     switch (action.type) {
         case appActions.ADD_TASK:
@@ -22,6 +34,9 @@ export const appReducer = (state, action) => {
 
         case appActions.REMOVE_TASK:
             return handleRemoveTask(state, action.payload);
+
+        case appActions.FINISH_TASK:
+            return handleFinishTask(state, action.payload);
 
         default:
             return state;
