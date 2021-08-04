@@ -1,4 +1,12 @@
 .results {
+    margin-bottom: 30px;
     background-color: var(--background-color-panel);
     border-radius: 5px;
+
+    &__empty {
+        margin: 10px 0;
+        color: lightgreen;
+        text-align: center;
+        font-size: 0.6rem;
+    }
 }

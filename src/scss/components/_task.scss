@@ -1,0 +1,44 @@
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+
+    &__name,
+    &__date {
+        color: var(--task-text-color);
+    }
+
+    &__name {
+        font-size: 0.8rem;
+        font-weight: normal;
+    }
+
+    &__date {
+        font-size: 0.5rem;
+        text-indent: 5px;
+    }
+
+    &__actions-wrap {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    &__delete {
+        outline: none;
+        border-style: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    @include mq(small) {
+        &__name {
+            font-size: 1rem;
+        }
+
+        &__date {
+            font-size: 0.7rem;
+        }
+    }
+}
