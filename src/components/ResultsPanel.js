@@ -1,21 +1,25 @@
-import React, { useContext } from 'react';
-import { AppContext } from '../context/GlobalStore';
+import React, { useState } from 'react';
+import ResultsList from './ResultsList';
 import ResultsOptions from './ResultsOptions';
-import Task from './Task';
 
 const ResultsPanel = () => {
-    const { state } = useContext(AppContext);
+    const [filter, setFilter] = useState('all');
 
-    const taskList = state.map((task) => <Task key={task.id} {...task} />);
+    const handleOnClickOOption = (e) => {
+        document
+            .querySelectorAll('.results__option')
+            .forEach((btn) => btn.classList.remove('active'));
+
+        e.target.classList.add('active');
+        const currentFilter = e.target.name;
+
+        setFilter(currentFilter);
+    };
 
     return (
         <section className='results'>
-            {taskList.length ? (
-                taskList
-            ) : (
-                <p className='results__empty'>You don't have any tasks :D</p>
-            )}
-            <ResultsOptions />
+            <ResultsList currentFilter={filter} />
+            <ResultsOptions onClick={handleOnClickOOption} />
         </section>
     );
 };
