@@ -3,6 +3,7 @@ export const appActions = {
     REMOVE_TASK: 'REMOVE_TASK',
     FINISH_TASK: 'FINISH_TASK',
     CLEAR_FINISH_TASK: 'CLEAR_FINISH_TASK',
+    REORDER_STATE: 'REORDER_STATE',
 };
 
 const handleAddTask = (state, payload) => {
@@ -34,6 +35,15 @@ const handleClearFinishTask = (state) => {
     return newState;
 };
 
+const handleReordersState = (state, payload) => {
+    if (!payload.result.destination) return state;
+    const newState = [...state];
+    const [reorderedItem] = newState.splice(payload.result.source.index, 1);
+    newState.splice(payload.result.destination.index, 0, reorderedItem);
+
+    return newState;
+};
+
 export const appReducer = (state, action) => {
     switch (action.type) {
         case appActions.ADD_TASK:
@@ -47,6 +57,9 @@ export const appReducer = (state, action) => {
 
         case appActions.CLEAR_FINISH_TASK:
             return handleClearFinishTask(state);
+
+        case appActions.REORDER_STATE:
+            return handleReordersState(state, action.payload);
 
         default:
             return state;

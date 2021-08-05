@@ -17,10 +17,13 @@ const ResultsPanel = () => {
     };
 
     return (
-        <section className='results'>
-            <ResultsList currentFilter={filter} />
-            <ResultsOptions onClickFilters={handleOnClickOption} />
-        </section>
+        <>
+            <section className='results'>
+                <ResultsList currentFilter={filter} />
+                <ResultsOptions onClickFilters={handleOnClickOption} />
+            </section>
+            <p className='results__info'>Drag and drop to reorder list</p>
+        </>
     );
 };
 
