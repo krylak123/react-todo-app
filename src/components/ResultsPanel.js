@@ -5,7 +5,7 @@ import ResultsOptions from './ResultsOptions';
 const ResultsPanel = () => {
     const [filter, setFilter] = useState('all');
 
-    const handleOnClickOOption = (e) => {
+    const handleOnClickOption = (e) => {
         document
             .querySelectorAll('.results__option')
             .forEach((btn) => btn.classList.remove('active'));
@@ -19,7 +19,7 @@ const ResultsPanel = () => {
     return (
         <section className='results'>
             <ResultsList currentFilter={filter} />
-            <ResultsOptions onClick={handleOnClickOOption} />
+            <ResultsOptions onClickFilters={handleOnClickOption} />
         </section>
     );
 };

@@ -2,6 +2,7 @@ export const appActions = {
     ADD_TASK: 'GET_TASKS',
     REMOVE_TASK: 'REMOVE_TASK',
     FINISH_TASK: 'FINISH_TASK',
+    CLEAR_FINISH_TASK: 'CLEAR_FINISH_TASK',
 };
 
 const handleAddTask = (state, payload) => {
@@ -27,6 +28,12 @@ const handleFinishTask = (state, payload) => {
     return newState;
 };
 
+const handleClearFinishTask = (state) => {
+    const newState = state.filter((item) => !item.isFinished);
+
+    return newState;
+};
+
 export const appReducer = (state, action) => {
     switch (action.type) {
         case appActions.ADD_TASK:
@@ -37,6 +44,9 @@ export const appReducer = (state, action) => {
 
         case appActions.FINISH_TASK:
             return handleFinishTask(state, action.payload);
+
+        case appActions.CLEAR_FINISH_TASK:
+            return handleClearFinishTask(state);
 
         default:
             return state;

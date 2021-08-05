@@ -18,6 +18,10 @@ const GlobalStore = ({ children }) => {
         dispatch({ type: appActions.FINISH_TASK, payload: { id, isFinished } });
     };
 
+    const clearFinishTask = () => {
+        dispatch({ type: appActions.CLEAR_FINISH_TASK });
+    };
+
     return (
         <AppContext.Provider
             value={{
@@ -25,6 +29,7 @@ const GlobalStore = ({ children }) => {
                 addTask,
                 removeTask,
                 finishTask,
+                clearFinishTask,
             }}
         >
             {children}
