@@ -6,6 +6,7 @@ import ResultsOptions from './ResultsOptions';
 const ResultsPanel = () => {
     const { clearFinishTask } = useContext(AppContext);
     const [filter, setFilter] = useState('all');
+    const [count, setCount] = useState(0);
 
     const handleOnClickOption = (e) => {
         document
@@ -33,10 +34,11 @@ const ResultsPanel = () => {
     return (
         <>
             <section className='results'>
-                <ResultsList currentFilter={filter} />
+                <ResultsList currentFilter={filter} count={setCount} />
                 <ResultsOptions
                     onClickFilters={handleOnClickOption}
                     onClickClear={handleOnClickClear}
+                    count={count}
                 />
             </section>
             <p className='results__info'>Drag and drop to reorder list</p>

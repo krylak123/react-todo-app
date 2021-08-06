@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
+import { useEffect } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { AppContext } from '../context/GlobalStore';
 import Task from './Task';
 
-const ResultsList = ({ currentFilter }) => {
+const ResultsList = ({ currentFilter, count }) => {
     const { state, reorderState } = useContext(AppContext);
 
     const handleOnDragEnd = (result) => {
@@ -21,6 +22,10 @@ const ResultsList = ({ currentFilter }) => {
     const taskListMap = taskList.map((task, index) => (
         <Task key={task.id} {...task} index={index} />
     ));
+
+    useEffect(() => {
+        count(taskList.length);
+    });
 
     return (
         <DragDropContext onDragEnd={handleOnDragEnd}>

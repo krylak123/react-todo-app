@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ResultsOptions = ({ onClickFilters, onClickClear }) => {
+const ResultsOptions = ({ onClickFilters, onClickClear, count }) => {
     return (
         <div className='results__panel'>
             <div className='results__count-wrap'>
-                <p className='results__count'> items left</p>
+                <p className='results__count'>{count} items left</p>
             </div>
             <div className='results__options-wrap'>
                 <button
