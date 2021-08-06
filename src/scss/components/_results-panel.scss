@@ -2,6 +2,7 @@
     margin-bottom: 30px;
     background-color: var(--background-color-panel);
     border-radius: 5px;
+    box-shadow: 0 10px 50px var(--background-color-panel-shadow);
 
     &__empty {
         margin: 10px 0;
@@ -15,6 +16,7 @@
         font-size: 0.8rem;
         text-align: center;
         color: var(--options-text-color);
+        text-shadow: 0 0 100px black;
     }
 
     @include mq(small) {

@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--options-text-color);
+    background-color: var(--background-color-panel);
 
     &__name,
     &__date {
@@ -27,6 +28,9 @@
 
     &__finish-wrap {
         margin-right: 10px;
+        &:hover .task__btn-finish {
+            box-shadow: 0 0 3px var(--task-text-color);
+        }
     }
 
     &__delete-wrap {

@@ -35,6 +35,7 @@ $color-primary-check-bg: linear-gradient(
 :root[data-theme='dark'] {
     --background-color-main: hsl(235, 21%, 11%);
     --background-color-panel: hsl(235, 24%, 19%);
+    --background-color-panel-shadow: hsl(235, 13%, 17%);
     --background-image-mobile: url('../../images/bg-mobile-dark.jpg');
     --background-image-desktop: url('../../images/bg-desktop-dark.jpg');
     --task-text-color: hsl(234, 39%, 85%);
@@ -46,6 +47,7 @@ $color-primary-check-bg: linear-gradient(
 :root[data-theme='light'] {
     --background-color-main: hsl(236, 33%, 92%);
     --background-color-panel: hsl(0, 0%, 98%);
+    --background-color-panel-shadow: rgb(201, 201, 230);
     --background-image-mobile: url('../../images/bg-mobile-light.jpg');
     --background-image-desktop: url('../../images/bg-desktop-light.jpg');
     --task-text-color: hsl(235, 19%, 35%);
