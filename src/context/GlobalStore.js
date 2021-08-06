@@ -4,7 +4,17 @@ import { appActions, appReducer } from './reducers';
 export const AppContext = createContext(null);
 
 const GlobalStore = ({ children }) => {
-    const [state, dispatch] = useReducer(appReducer, []);
+    const getDataFromStorage = () => {
+        const state = JSON.parse(localStorage.getItem('TASK_LIST'));
+
+        if (state) {
+            return state;
+        }
+
+        return [];
+    };
+
+    const [state, dispatch] = useReducer(appReducer, getDataFromStorage());
 
     const addTask = (task) => {
         dispatch({ type: appActions.ADD_TASK, payload: { task } });

@@ -9,11 +9,15 @@ export const appActions = {
 const handleAddTask = (state, payload) => {
     const newState = [...state, payload.task];
 
+    localStorage.setItem('TASK_LIST', JSON.stringify(newState));
+
     return newState;
 };
 
 const handleRemoveTask = (state, payload) => {
     const newState = state.filter((item) => item.id !== payload.id);
+
+    localStorage.setItem('TASK_LIST', JSON.stringify(newState));
 
     return newState;
 };
@@ -26,11 +30,15 @@ const handleFinishTask = (state, payload) => {
         }
     });
 
+    localStorage.setItem('TASK_LIST', JSON.stringify(newState));
+
     return newState;
 };
 
 const handleClearFinishTask = (state) => {
     const newState = state.filter((item) => !item.isFinished);
+
+    localStorage.setItem('TASK_LIST', JSON.stringify(newState));
 
     return newState;
 };
@@ -40,6 +48,8 @@ const handleReordersState = (state, payload) => {
     const newState = [...state];
     const [reorderedItem] = newState.splice(payload.result.source.index, 1);
     newState.splice(payload.result.destination.index, 0, reorderedItem);
+
+    localStorage.setItem('TASK_LIST', JSON.stringify(newState));
 
     return newState;
 };
