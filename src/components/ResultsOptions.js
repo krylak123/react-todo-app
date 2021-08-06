@@ -1,13 +1,6 @@
-import React, { useContext } from 'react';
-import { AppContext } from '../context/GlobalStore';
+import React from 'react';
 
-const ResultsOptions = ({ onClickFilters }) => {
-    const { clearFinishTask } = useContext(AppContext);
-
-    const handleOnClickClear = () => {
-        clearFinishTask();
-    };
-
+const ResultsOptions = ({ onClickFilters, onClickClear }) => {
     return (
         <div className='results__panel'>
             <div className='results__count-wrap'>
@@ -37,7 +30,7 @@ const ResultsOptions = ({ onClickFilters }) => {
                 </button>
             </div>
             <div className='results__clear-wrap'>
-                <button onClick={handleOnClickClear} className='results__clear'>
+                <button onClick={onClickClear} className='results__clear'>
                     Clear Completed
                 </button>
             </div>

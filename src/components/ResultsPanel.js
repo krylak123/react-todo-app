@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AppContext } from '../context/GlobalStore';
 import ResultsList from './ResultsList';
 import ResultsOptions from './ResultsOptions';
 
 const ResultsPanel = () => {
+    const { clearFinishTask } = useContext(AppContext);
     const [filter, setFilter] = useState('all');
 
     const handleOnClickOption = (e) => {
@@ -16,11 +18,26 @@ const ResultsPanel = () => {
         setFilter(currentFilter);
     };
 
+    const handleOnClickClear = () => {
+        clearFinishTask();
+
+        document
+            .querySelectorAll('.results__option')
+            .forEach((btn) => btn.classList.remove('active'));
+
+        document.querySelector('.results__option').classList.add('active');
+
+        setFilter('all');
+    };
+
     return (
         <>
             <section className='results'>
                 <ResultsList currentFilter={filter} />
-                <ResultsOptions onClickFilters={handleOnClickOption} />
+                <ResultsOptions
+                    onClickFilters={handleOnClickOption}
+                    onClickClear={handleOnClickClear}
+                />
             </section>
             <p className='results__info'>Drag and drop to reorder list</p>
         </>

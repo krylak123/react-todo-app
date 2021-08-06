@@ -4,21 +4,7 @@ import { appActions, appReducer } from './reducers';
 export const AppContext = createContext(null);
 
 const GlobalStore = ({ children }) => {
-    // const [state, dispatch] = useReducer(appReducer, []);
-    const [state, dispatch] = useReducer(appReducer, [
-        {
-            id: 1,
-            name: 'task',
-            isFinished: false,
-            dateAdd: 'nowDate',
-        },
-        {
-            id: 2,
-            name: 'task2',
-            isFinished: false,
-            dateAdd: 'nowDate',
-        },
-    ]);
+    const [state, dispatch] = useReducer(appReducer, []);
 
     const addTask = (task) => {
         dispatch({ type: appActions.ADD_TASK, payload: { task } });
