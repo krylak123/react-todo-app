@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/react-todo-app/static/css/main.ab251f14.chunk.css",
+    "main.js": "/react-todo-app/static/js/main.2d86d2ff.chunk.js",
+    "main.js.map": "/react-todo-app/static/js/main.2d86d2ff.chunk.js.map",
+    "runtime-main.js": "/react-todo-app/static/js/runtime-main.e01786c3.js",
+    "runtime-main.js.map": "/react-todo-app/static/js/runtime-main.e01786c3.js.map",
+    "static/js/2.1a423d85.chunk.js": "/react-todo-app/static/js/2.1a423d85.chunk.js",
+    "static/js/2.1a423d85.chunk.js.map": "/react-todo-app/static/js/2.1a423d85.chunk.js.map",
+    "static/js/3.e372d2dd.chunk.js": "/react-todo-app/static/js/3.e372d2dd.chunk.js",
+    "static/js/3.e372d2dd.chunk.js.map": "/react-todo-app/static/js/3.e372d2dd.chunk.js.map",
+    "index.html": "/react-todo-app/index.html",
+    "static/css/main.ab251f14.chunk.css.map": "/react-todo-app/static/css/main.ab251f14.chunk.css.map",
+    "static/js/2.1a423d85.chunk.js.LICENSE.txt": "/react-todo-app/static/js/2.1a423d85.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/react-todo-app/static/media/bg-desktop-light.3508d620.jpg",
+    "static/media/icon-check.a8fb15d0.svg": "/react-todo-app/static/media/icon-check.a8fb15d0.svg",
+    "static/media/icon-cross.6ee81d30.svg": "/react-todo-app/static/media/icon-cross.6ee81d30.svg",
+    "static/media/icon-moon.6c03114b.svg": "/react-todo-app/static/media/icon-moon.6c03114b.svg",
+    "static/media/icon-sun.910b1f9a.svg": "/react-todo-app/static/media/icon-sun.910b1f9a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e01786c3.js",
+    "static/js/2.1a423d85.chunk.js",
+    "static/css/main.ab251f14.chunk.css",
+    "static/js/main.2d86d2ff.chunk.js"
+  ]
+}
