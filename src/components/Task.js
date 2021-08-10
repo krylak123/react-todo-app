@@ -5,7 +5,7 @@ import { AppContext } from '../context/GlobalStore';
 import finishIcon from '../images/icon-check.svg';
 import deleteIcon from '../images/icon-cross.svg';
 
-const Task = ({ id, name, isFinished, dateAdd, index }) => {
+const Task = ({ id, name, isImportant, isFinished, dateAdd, index }) => {
     const { finishTask, removeTask } = useContext(AppContext);
 
     const handleOnClickFinish = (id) => {
@@ -16,6 +16,18 @@ const Task = ({ id, name, isFinished, dateAdd, index }) => {
         removeTask(id);
     };
 
+    const taskClasses = () => {
+        if (isFinished && isImportant) {
+            return 'task finish important';
+        } else if (isFinished) {
+            return 'task finish';
+        } else if (isImportant) {
+            return 'task important';
+        } else {
+            return 'task';
+        }
+    };
+
     return (
         <Draggable key={id} draggableId={name} index={index}>
             {(provided) => (
@@ -23,7 +35,7 @@ const Task = ({ id, name, isFinished, dateAdd, index }) => {
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
-                    className={isFinished ? 'task finish' : 'task'}
+                    className={taskClasses()}
                 >
                     <div className='task__finish-wrap'>
                         <button

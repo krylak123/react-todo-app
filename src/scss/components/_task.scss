@@ -78,6 +78,10 @@
         }
     }
 
+    &.important {
+        background-color: var(--task-important-background);
+    }
+
     @include mq(small) {
         &__name {
             font-size: 1rem;

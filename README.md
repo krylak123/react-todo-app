@@ -30,11 +30,8 @@ List the ready features here:
 -   Task's counter (all|active|completed)
 -   Task's filter (all|active|completed)
 -   Button that removing completed tasks
-
-List the not ready features here:
-
 -   Marking task as important
 
 ## Project Status
 
-Project is: _in progress_.
+Project is: _finished_.

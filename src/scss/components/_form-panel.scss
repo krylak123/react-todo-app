@@ -1,6 +1,5 @@
 .form {
     display: flex;
-    flex-direction: column;
     position: relative;
     margin-bottom: 15px;
     padding: 10px;
@@ -9,6 +8,14 @@
 
     &__label {
         display: flex;
+
+        &--checkbox {
+            margin-right: 5px;
+        }
+
+        &--input {
+            flex-grow: 1;
+        }
     }
 
     &__input {

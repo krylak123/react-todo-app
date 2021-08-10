@@ -40,6 +40,7 @@ $color-primary-check-bg: linear-gradient(
     --background-image-desktop: url('../../images/bg-desktop-dark.jpg');
     --task-text-color: hsl(234, 39%, 85%);
     --task-finish-text-color: hsl(233, 14%, 35%);
+    --task-important-background: hsl(0, 64%, 53%);
     --options-text-color: hsl(234, 11%, 52%);
     --empty-text-color: hsl(120, 73%, 75%);
 }
@@ -52,6 +53,7 @@ $color-primary-check-bg: linear-gradient(
     --background-image-desktop: url('../../images/bg-desktop-light.jpg');
     --task-text-color: hsl(235, 19%, 35%);
     --task-finish-text-color: hsl(236, 33%, 92%);
+    --task-important-background: hsl(0, 79%, 72%);
     --options-text-color: hsl(236, 9%, 61%);
     --empty-text-color: hsl(120, 100%, 20%);
 }

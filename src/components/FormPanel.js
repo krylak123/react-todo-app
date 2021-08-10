@@ -9,6 +9,7 @@ const FormPanel = () => {
 
     const formik = useFormik({
         initialValues: {
+            taskImportant: false,
             taskName: '',
         },
         validationSchema,
@@ -19,10 +20,12 @@ const FormPanel = () => {
             const task = {
                 id: generateID,
                 name: values.taskName,
+                isImportant: values.taskImportant,
                 isFinished: false,
                 dateAdd: nowDate,
             };
 
+            formik.values.taskImportant = false;
             formik.values.taskName = '';
             addTask(task);
         },
@@ -30,7 +33,17 @@ const FormPanel = () => {
 
     return (
         <form className='form' onSubmit={formik.handleSubmit}>
-            <label className='form__label'>
+            <label className='form__label form__label--checkbox'>
+                <input
+                    type='checkbox'
+                    name='taskImportant'
+                    className='form__checkbox'
+                    checked={formik.values.taskImportant}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                />
+            </label>
+            <label className='form__label form__label--input'>
                 <input
                     type='text'
                     name='taskName'
