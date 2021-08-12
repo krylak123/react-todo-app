@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useFormik } from 'formik';
+import { v4 as uuidv4 } from 'uuid';
 
 import validationSchema from '../utils/formValidation';
 import { AppContext } from '../context/GlobalStore';
@@ -14,11 +15,10 @@ const FormPanel = () => {
         },
         validationSchema,
         onSubmit: (values) => {
-            const generateID = new Date().getTime();
             const nowDate = new Date().toLocaleString();
 
             const task = {
-                id: generateID,
+                id: uuidv4(),
                 name: values.taskName,
                 isImportant: values.taskImportant,
                 isFinished: false,
