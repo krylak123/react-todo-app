@@ -18,6 +18,36 @@
         }
     }
 
+    &__checkbox {
+        position: relative;
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid var(--task-finish-text-color);
+        cursor: pointer;
+        transition: 0.1s;
+
+        &::before {
+            content: '!';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--task-finish-text-color);
+        }
+
+        &:checked {
+            background-color: var(--task-important-background);
+
+            &::before {
+                color: var(--background-color-main);
+            }
+        }
+    }
+
     &__input {
         flex-grow: 1;
         padding: 3px 2px;
